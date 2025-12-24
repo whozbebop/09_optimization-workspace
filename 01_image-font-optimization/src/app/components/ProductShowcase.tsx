@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Image from "next/image";
 
@@ -7,7 +7,6 @@ const products = [
     id: 1,
     name: "프리미엄 카메라",
     price: "1,299,000원",
-    // ⚠️ 최적화 안됨: 큰 용량의 고해상도 이미지 (2-3MB)
     image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f",
   },
   {
@@ -40,20 +39,10 @@ export default function ProductShowcase() {
         <p className="text-center text-gray-600 mb-16 text-lg">
           최신 트렌드의 프리미엄 제품을 만나보세요
         </p>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {products.map((product) => (
-            <div
-              key={product.id}
-              className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition"
-            >
-              {/* 
-                ⚠️ 최적화 안됨: 
-                1. img 태그 사용
-                2. lazy loading 없음 (모든 이미지 즉시 로드)
-                3. 고해상도 이미지를 작은 카드에 표시
-                4. WebP 같은 최신 포맷 미사용
-              */}
+            <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
               <div className="aspect-square overflow-hidden relative">
                 <Image
                   src={product.image}
@@ -66,9 +55,7 @@ export default function ProductShowcase() {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-2">{product.name}</h3>
-                <p className="text-2xl font-bold text-blue-600 font-mono">
-                  {product.price}
-                </p>
+                <p className="text-2xl font-bold text-blue-600 font-mono">{product.price}</p>
                 <button className="mt-4 w-full bg-black text-white py-3 rounded-lg hover:bg-gray-800 transition">
                   구매하기
                 </button>
@@ -80,3 +67,4 @@ export default function ProductShowcase() {
     </section>
   );
 }
+

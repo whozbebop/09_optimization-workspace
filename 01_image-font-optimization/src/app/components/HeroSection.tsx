@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Image from "next/image";
 
@@ -6,19 +6,12 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       {/* 
-        ⚠️ 최적화 안됨: 
-        1. Next.js Image 컴포넌트 대신 일반 img 태그 사용
-        2. 큰 용량의 원본 이미지 직접 로드 (3MB+)
-        3. lazy loading 없음
-        4. 반응형 이미지 없음 (모바일에서도 큰 이미지 로드)
-      */}
-      {/* 
         최적화
         Next.js Image 컴포넌트 사용
         priority 속성으로 LCP 개선
       */}
-      <Image
-        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4"
+      <Image 
+        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4" 
         alt="Hero Background"
         className="object-cover z-0"
         fill
@@ -26,9 +19,9 @@ export default function HeroSection() {
         quality={75}
         priority
       />
-
+      
       <div className="absolute inset-0 bg-black/40 z-[1]" />
-
+      
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4">
         <h1 className="text-6xl md:text-8xl font-bold mb-6 text-center font-display">
           Beautiful Gallery
@@ -43,3 +36,4 @@ export default function HeroSection() {
     </section>
   );
 }
+
