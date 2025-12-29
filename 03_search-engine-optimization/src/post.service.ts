@@ -1,12 +1,11 @@
 import { BlogPost } from "./post.type";
 
-// 더미 데이터
+// 더미 데이터 
 const blogPosts: BlogPost[] = [
   {
     id: "1",
     title: "Next.js 15의 새로운 기능들",
-    excerpt:
-      "Next.js 15가 출시되었습니다. 이번 버전에서 추가된 주요 기능들을 살펴보겠습니다.",
+    excerpt: "Next.js 15가 출시되었습니다. 이번 버전에서 추가된 주요 기능들을 살펴보겠습니다.",
     content: `
       Next.js 15가 출시되면서 많은 개발자들의 관심을 받고 있습니다. 
       
@@ -26,13 +25,12 @@ const blogPosts: BlogPost[] = [
     category: "프론트엔드",
     imageUrl: "/images/nextjs.png",
     readTime: "5분",
-    tags: ["Next.js", "React", "웹 개발"],
+    tags: ["Next.js", "React", "웹 개발"]
   },
   {
     id: "2",
     title: "React 19 알파 버전 살펴보기",
-    excerpt:
-      "React 19 알파 버전이 공개되었습니다. 새로운 기능과 변경사항을 알아봅시다.",
+    excerpt: "React 19 알파 버전이 공개되었습니다. 새로운 기능과 변경사항을 알아봅시다.",
     content: `
       React 팀이 드디어 React 19 알파 버전을 공개했습니다.
       
@@ -54,7 +52,7 @@ const blogPosts: BlogPost[] = [
     category: "프론트엔드",
     imageUrl: "/images/react.png",
     readTime: "7분",
-    tags: ["React", "JavaScript", "프론트엔드"],
+    tags: ["React", "JavaScript", "프론트엔드"]
   },
   {
     id: "3",
@@ -83,7 +81,7 @@ const blogPosts: BlogPost[] = [
     category: "프로그래밍",
     imageUrl: "/images/ts.png",
     readTime: "6분",
-    tags: ["TypeScript", "JavaScript", "개발도구"],
+    tags: ["TypeScript", "JavaScript", "개발도구"]
   },
   {
     id: "4",
@@ -115,7 +113,7 @@ const blogPosts: BlogPost[] = [
     category: "CSS",
     imageUrl: "/images/tailwind.png",
     readTime: "4분",
-    tags: ["Tailwind CSS", "CSS", "UI/UX"],
+    tags: ["Tailwind CSS", "CSS", "UI/UX"]
   },
   {
     id: "5",
@@ -144,7 +142,7 @@ const blogPosts: BlogPost[] = [
     category: "최적화",
     imageUrl: "/images/optimization.png",
     readTime: "10분",
-    tags: ["성능 최적화", "웹 개발", "SEO"],
+    tags: ["성능 최적화", "웹 개발", "SEO"]
   },
   {
     id: "6",
@@ -174,24 +172,24 @@ const blogPosts: BlogPost[] = [
     category: "SEO",
     imageUrl: "/images/seo.png",
     readTime: "12분",
-    tags: ["SEO", "웹 개발", "마케팅"],
-  },
+    tags: ["SEO", "웹 개발", "마케팅"]
+  }
 ];
 
-// API 통신 함수라는 가정
-// 전체 포스트 가져오기
+// API 통신 함수라는 가정 
+// 전체 포스트 가져오기 
 export async function getPosts(): Promise<BlogPost[]> {
   return blogPosts;
 }
 // 특정 포스트 가져오기
 export async function getPostById(id: string): Promise<BlogPost | undefined> {
-  return blogPosts.find((post) => post.id === id);
+  return blogPosts.find(post => post.id === id);
 }
 // 카테고리별 포스트 가져오기
 export function getPostsByCategory(category: string): BlogPost[] {
-  return blogPosts.filter((post) => post.category === category);
+  return blogPosts.filter(post => post.category === category);
 }
 // 최신 포스트 가져오기
 export async function getLatestPosts(limit: number = 3): Promise<BlogPost[]> {
-  return Promise.resolve(blogPosts.slice(0, limit));
+  return blogPosts.slice(0, limit);
 }

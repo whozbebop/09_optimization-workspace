@@ -14,56 +14,49 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// ❌ SEO 문제 1: meta description 누락
-// ❌ SEO 문제 2: title이 너무 짧고 구체적이지 않음
-// ❌ SEO 문제 3: Open Graph(OG) 태그 누락
-// ❌ SEO 문제 4: metadataBase가 없어서 OG 이미지 경로설정시 문제 발생 여지 있음
+// ❌ SEO 문제 3: Open Graph(OG) 태그 누락 
+// ❌ SEO 문제 4: metadataBase가 없어서 OG 이미지 경로설정시 문제 발생 여지 있음 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://devblog.example.com"),
+
+  metadataBase: new URL('http://localhost:3000'),
+
   title: {
     default: "DevBlog - 개발자를 위한 기술 블로그",
-    template: "%s | DevBlog", // 각 하위 페이지에서 설정한 title => %s에 들어감
+    template: "%s | DevBlog" // 각 하위 페이지에서 설정한 title => %s에 들어감
   },
-  description:
-    "Next.js, React, TypeScript 등 최신 웹 개발 기술과 트랜드를 다루는 개발자 블로그입니다. 성능 최적화, SEO, 실무 경험을 공유합니다.",
-  keywords: [
-    "개발자 블로그",
-    "웹 개발",
-    "Next.js",
-    "React",
-    "TypeScript",
-    "SEO",
-    "성능 최적화",
-    "프론트엔드",
-  ],
-  authors: [{ name: "DevBlog 팀", url: "https://devblog.example.com/about" }],
-  creator: "DevBlog 팀",
-  publisher: "DevBlog 팀",
+  description: "Next.js, React, TypeScript 등 최신 웹 개발 기술과 트렌드를 다루는 개발자 블로그입니다. 성능 최적화, SEO, 실무 경험을 공유합니다.",
+  
+  keywords: ["Next.js", "React", "TypeScript", "웹 개발", "프론트엔드"],
+
+  authors: [{ name: "DevBlog Team", url: "https://devblog.com" }],
+  creator: "DevBlog Team",
+  publisher: "DevBlog Team",
+
   openGraph: {
     type: "website",
     locale: "ko_KR",
     url: "/",
     siteName: "DevBlog",
     title: "DevBlog - 개발자를 위한 기술 블로그",
-    description:
-      "Next.js, React, TypeScript 등 최신 웹 개발 기술과 트랜드를 다루는 개발자 블로그입니다. 성능 최적화, SEO, 실무 경험을 공유합니다.",
+    description: "Next.js, React, TypeScript 등 최신 웹 개발 기술을 다룹니다.",
     images: [
       {
         url: "/images/og-image.png",
         width: 1200,
         height: 630,
-        alt: "DevBlog Open Graph 이미지",
-      },
-    ],
+        alt: "DevBlog 로고"
+      }
+    ]
   },
+
   twitter: {
     card: "summary_large_image",
     title: "DevBlog - 개발자를 위한 기술 블로그",
-    description:
-      "Next.js, React, TypeScript 등 최신 웹 개발 기술과 트랜드를 다루는 개발자 블로그입니다. 성능 최적화, SEO, 실무 경험을 공유합니다.",
+    description: "Next.js, React, TypeScript 등 최신 웹 개발 기술을 다룹니다.",
     images: ["/images/og-image.png"],
-    creator: "@devblog_team",
-  },
+    creator: "@devblog_team"
+  }
+
 };
 
 export default function RootLayout({
@@ -77,11 +70,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+
           <Header />
 
           {children}
-
+          
           <Footer />
+          
         </div>
       </body>
     </html>

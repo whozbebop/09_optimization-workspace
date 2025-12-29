@@ -1,17 +1,16 @@
+
 import { Metadata } from "next";
 import Link from "next/link";
 
-// ❌ SEO 문제: 메타데이터 없음
 export const metadata: Metadata = {
   title: "소개",
-  description: "DevBlog 소개 페이지입니다.",
-};
+  description: "DevBlog는 개발자들이 지식을 공유하고 성장할 수 있는 공간입니다."
+}
+
 export default function AboutPage() {
   return (
     <>
-      {/* ❌ SEO 문제: main 태그 없음 */}
       <main className="max-w-4xl mx-auto px-4 py-16">
-        {/* ❌ SEO 문제: h1 태그 없음, 스타일로만 큰 텍스트 */}
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-900 mb-4">
             DevBlog 소개
@@ -21,27 +20,26 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* ❌ SEO 문제: section 태그 없이 div로만 구성 */}
-        <section className="space-y-12">
-          {/* ❌ SEO 문제: article 또는 section 대신 div */}
-          <article className="bg-white rounded-lg shadow-md p-8">
-            {/* ❌ SEO 문제: h2 태그 없이 스타일로만 제목 표현 */}
+        <div className="space-y-12">
+
+          <section className="bg-white rounded-lg shadow-md p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               우리의 미션
             </h2>
             <div className="text-gray-700 leading-relaxed">
-              DevBlog는 개발자들이 지식을 공유하고 성장할 수 있는 공간을
-              제공합니다. 최신 기술 트렌드부터 실무 경험까지, 다양한 주제의
-              고품질 콘텐츠를 통해 개발 커뮤니티의 발전에 기여하고자 합니다.
+              DevBlog는 개발자들이 지식을 공유하고 성장할 수 있는 공간을 제공합니다.
+              최신 기술 트렌드부터 실무 경험까지, 다양한 주제의 고품질 콘텐츠를 통해
+              개발 커뮤니티의 발전에 기여하고자 합니다.
             </div>
-          </article>
+          </section>
 
-          <article className="bg-white rounded-lg shadow-md p-8">
+          <section className="bg-white rounded-lg shadow-md p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
               다루는 주제
             </h2>
+
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* ❌ SEO 문제: 리스트를 ul/li 대신 div로 구현 */}
+
               <li className="flex items-start gap-3">
                 <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                   <span className="text-blue-600 font-bold">1</span>
@@ -98,17 +96,18 @@ export default function AboutPage() {
                 </div>
               </li>
             </ul>
-          </article>
+          </section>
 
-          <article className="bg-white rounded-lg shadow-md p-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">참여하기</h2>
+          <section className="bg-white rounded-lg shadow-md p-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              참여하기
+            </h2>
             <div className="text-gray-700 leading-relaxed mb-6">
-              DevBlog는 모든 개발자에게 열려 있습니다. 여러분의 경험과 지식을
-              공유하고 싶으시다면 언제든 환영합니다!
+              DevBlog는 모든 개발자에게 열려 있습니다. 
+              여러분의 경험과 지식을 공유하고 싶으시다면 언제든 환영합니다!
             </div>
-            {/* ❌ SEO 문제: 외부 링크에 적절한 rel 속성 없음 */}
             <div className="flex gap-4">
-              <a
+              <a 
                 href="https://github.com"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -123,9 +122,10 @@ export default function AboutPage() {
                 블로그 둘러보기
               </Link>
             </div>
-          </article>
-        </section>
+          </section>
+        </div>
       </main>
     </>
   );
 }
+
